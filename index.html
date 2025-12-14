@@ -3,130 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Divansha - Mechanical Engineer Portfolio</title>
+    <title>John Doe - Full Stack Developer Portfolio</title>
     <style>
-        /* Reset and Global Styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; line-height: 1.6; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
-        section { padding: 60px 20px; text-align: center; opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
-        section.visible { opacity: 1; transform: translateY(0); }
+        /* Reset and Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        /* Header/Nav */
-        header { position: fixed; width: 100%; background: #004d80; color: #fff; padding: 10px 0; z-index: 10; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav ul li { margin: 10px 15px; }
-        nav ul li a { color: #fff; font-weight: bold; transition: color 0.3s ease; }
-        nav ul li a:hover { color: #ffd700; }
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            animation: pulse 5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: slideInLeft 1.5s ease-out;
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        header p {
+            font-size: 1.5em;
+            animation: slideInRight 1.5s ease-out;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
 
-        /* Hero Section with Parallax and Typing Animation */
-        #home { height: 100vh; background: url('https://c8.alamy.com/comp/2GHM7MT/tools-and-machinery-in-mechanical-workshop-2GHM7MT.jpg') no-repeat center/cover fixed; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; will-change: transform; }
-        #home::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
-        #home .content { position: relative; z-index: 1; }
-        #home img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid #fff; animation: fadeIn 2s ease-out; margin-bottom: 20px; will-change: opacity; }
-        #home h1 { font-size: 3em; animation: scaleIn 1.5s ease-out; will-change: transform, opacity; }
-        #home p { font-size: 1.5em; }
-        .typing { border-right: 2px solid #fff; white-space: nowrap; overflow: hidden; animation: typing 4s steps(40, end) 0.5s, blink 0.75s step-end infinite; will-change: width; }
+        /* Navigation */
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
 
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes scaleIn { from { transform: scale(0.8) translateY(-20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
-        @keyframes typing { from { width: 0; } to { width: 100%; } }
-        @keyframes blink { 50% { border-color: transparent; } }
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #007bff;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
         /* About Section */
-        #about { background: #fff; }
-        #about p { max-width: 800px; margin: 20px auto; }
-
-        /* Experience and Internships Cards with Flip Animation */
-        .card-container { display: flex; justify-content: center; flex-wrap: wrap; }
-        .card { width: 300px; height: 400px; perspective: 1000px; margin: 20px; will-change: transform; }
-        .card-inner { width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform-style: preserve-3d; position: relative; }
-        .card:hover .card-inner { transform: rotateY(180deg); }
-        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease; }
-        .card-front { background: #fff; }
-        .card-back { background: #e6f2ff; transform: rotateY(180deg); }
-        .card img { width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease; }
-        .card:hover .card img { transform: scale(1.05); }
-
-        /* Skills Bar Animation */
-        #skills { background: #e6f2ff; }
-        .skill { margin: 10px 0; text-align: left; max-width: 600px; margin: 20px auto; }
-        .skill-name { font-weight: bold; }
-        .skill-bar { height: 20px; background: #ddd; border-radius: 10px; overflow: hidden; }
-        .skill-progress { height: 100%; background: #004d80; width: 0; transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); border-radius: 10px; will-change: width; }
-        .skill.visible .skill-progress { width: var(--progress); }
-
-        /* Contact */
-        #contact { background: #fff; }
-        #contact form { max-width: 600px; margin: auto; }
-        #contact input, #contact textarea { width: 100%; margin: 10px 0; padding: 10px; transition: border 0.3s ease; }
-        #contact input:focus, #contact textarea:focus { border: 2px solid #004d80; outline: none; }
-        #contact button { padding: 10px 20px; background: #004d80; color: #fff; border: none; cursor: pointer; transition: background 0.3s ease; }
-        #contact button:hover { background: #003d66; }
-
-        /* Footer */
-        footer { background: #004d80; color: #fff; padding: 20px; text-align: center; }
-        footer .social { margin: 10px 0; }
-        footer .social a { margin: 0 10px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
-        footer .social a:hover { color: #ffd700; transform: translateY(-2px); }
-        footer .social a::before { content: ''; } /* Placeholder icons; replace with SVGs if needed */
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            section { padding: 40px 10px; transition-duration: 0.6s; /* Faster on mobile */ }
-            #home { background-attachment: scroll; /* Already fixed */ height: 80vh; /* Shorter for mobile */ }
-            #home h1 { font-size: 2em; }
-            #home p { font-size: 1.2em; }
-            #home img { width: 120px; height: 120px; }
-            .typing { animation: typing 3s steps(40, end) 0.3s, blink 0.75s step-end infinite; /* Faster typing on mobile */ }
-            nav ul { flex-direction: column; padding: 0; }
-            nav ul li { margin: 5px 0; }
-            .card { width: 100%; max-width: 300px; height: auto; margin: 10px auto; transition: none; /* Disable flip on mobile for performance */ }
-            .card-inner { transition: none; }
-            .card:hover .card-inner { transform: none; }
-            .card img { height: 120px; transition: none; }
-            .skill { max-width: 100%; padding: 0 10px; }
-            .skill-progress { transition: width 1s ease-out; /* Shorter duration */ }
-            #about img { width: 100%; max-width: 300px; }
-            #contact form { padding: 0 10px; }
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
-
-        @media (max-width: 480px) {
-            #home h1 { font-size: 1.5em; }
-            #home p { font-size: 1em; }
-            section h2 { font-size: 1.5em; }
-            .card { height: auto; padding: 10px; }
-            .card-front, .card-back { padding: 10px; }
-            footer { padding: 10px; }
-            footer .social a { font-size: 1.2em; margin: 0 5px; }
-            /* Further optimize: Reduce animation complexity */
-            section { transition-duration: 0.4s; }
-            .skill-progress { transition: width 0.8s ease-out; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Performance optimizations for mobile */
-        @media (prefers-reduced-motion: reduce) {
-            * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-            .typing { animation: none; border-right: none; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#internships">Internships</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home">
         <div class="content">
             <img src="https://www.shutterstock.com/image-photo/portrait-handsome-indian-engineer-wearing-260nw-1902078373.jpg" alt="Profile Photo">
             <h1>Mohamed Divansha</h1>
