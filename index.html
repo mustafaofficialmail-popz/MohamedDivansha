@@ -1,3 +1,4 @@
+> Amma:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,137 +135,291 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        <div class="content">
-            <img src="https://www.shutterstock.com/image-photo/portrait-handsome-indian-engineer-wearing-260nw-1902078373.jpg" alt="Profile Photo">
-            <h1>Mohamed Divansha</h1>
-            <p class="typing">Mechanical Engineer | Innovator | Problem Solver</p>
-        </div>
-    </section>
 
-    <section id="about">
+> Amma:
+/* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .skill {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .skill i {
+            font-size: 3em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+        .project-info a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #contact button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #contact button:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #007bff;
+        }
+    </style>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="https://via.placeholder.com/150?text=Profile" alt="Profile Image" class="profile-img">
+        <h1>John Doe</h1>
+        <p>Full Stack Developer | Building Innovative Web Solutions</p>
+    </header>
+
+    <section id="about" class="container">
         <h2>About Me</h2>
-        <img src="https://c8.alamy.com/comp/2GHM7MT/tools-and-machinery-in-mechanical-workshop-2GHM7MT.jpg" alt="Workshop" style="width: 300px; border-radius: 10px; margin: 20px 0;">
-        <p>To work in a creative and challenging environment where I could constantly enrich my skills and successfully deliver solutions for organizational growth. Diploma in Mechanical Engineering from Arulmigu Senthil Andavar Polytechnic College (2020). Passionate about automotive design and manufacturing.</p>
+        <p>As a passionate Full Stack Developer, I specialize in creating robust and scalable web applications using modern technologies. With expertise in both front-end and back-end development, I enjoy turning complex problems into elegant solutions.</p>
+        <p>My journey in tech started with [your story here]. I thrive on continuous learning and contributing to open-source projects.</p>
     </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="https://c8.alamy.com/comp/D0HTWE/car-factory-worker-on-motor-vehicle-assembly-line-D0HTWE.jpg" alt="Assembly Line">
-                        <h3>Ashok Leyland PVT LTD (2021-2022)</h3>
-                        <p>Mechanical Engineer with NATS Certification</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Assisted in design, development, and testing of mechanical systems. Performed inspections, collaborated with teams, and improved processes for efficiency.</p>
-                    </div>
+> Amma:
+<section id="skills" style="background: #fff;">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML5</p>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="https://c8.alamy.com/comp/D0HTWE/car-factory-worker-on-motor-vehicle-assembly-line-D0HTWE.jpg" alt="Assembly Line">
-                        <h3>Ashok Leyland PVT LTD (2024-2025)</h3>
-                        <p>Mechanical Engineer</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Collaborated on repairs, stayed updated with trends, maintained workspace, and adhered to safety protocols.</p>
-                    </div>
+                <div class="skill">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS3</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill"><span class="skill-name">AutoCAD</span><div class="skill-bar"><div class="skill-progress" style="--progress: 90%;"></div></div></div>
-        <div class="skill"><span class="skill-name">Finite Element Analysis (FEA)</span><div class="skill-bar"><div class="skill-progress" style="--progress: 80%;"></div></div></div>
-        <div class="skill"><span class="skill-name">Manufacturing Processes</span><div class="skill-bar"><div class="skill-progress" style="--progress: 85%;"></div></div></div>
-        <div class="skill"><span class="skill-name">Mechanical Analysis and Dynamics</span><div class="skill-bar"><div class="skill-progress" style="--progress: 75%;"></div></div></div>
-        <div class="skill"><span class="skill-name">MS Office</span><div class="skill-bar"><div class="skill-progress" style="--progress: 95%;"></div></div></div>
-    </section>
-
-    <section id="internships">
-        <h2>Internships</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="https://thumbs.dreamstime.com/b/smiling-mechanic-working-car-garage-smiling-mechanic-overalls-working-car-garage-automotive-technician-using-327642610.jpg" alt="Car Repair">
-                        <h3>Aruna Auto Agency (Dec 2019)</h3>
-                        <p>Mechanical Engineering Intern</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Assisted in diagnostics, repairs, and inventory. Gained hands-on experience in automotive troubleshooting and safety protocols.</p>
-                    </div>
+                <div class="skill">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
                 </div>
+                <div class="skill">
+                    <i class="fab fa-react"></i>
+                    <p>React</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-node-js"></i>
+                    <p>Node.js</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <p>MongoDB</p>
+                </div>
+                <!-- Add more skills as needed -->
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p>Email: mdivansha786@gmail.com | Mobile: +91 9498845719</p>
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project One</h3>
+                    <p>A full-stack web app built with React and Node.js. Features include user authentication and real-time updates.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project Two</h3>
+                    <p>An e-commerce platform with payment integration and admin dashboard.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <section id="contact" style="background: #fff;">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Mohamed Divansha. All rights reserved.</p>
-        <div class="social">
-            <a href="https://www.instagram.com/" title="Instagram">&#x1F4F7;</a> <!-- Camera icon as placeholder -->
-            <a href="https://www.linkedin.com/" title="LinkedIn">&#x1F464;</a> <!-- Bust icon -->
-            <a href="https://twitter.com/" title="Twitter">&#x1F426;</a> <!-- Bird icon -->
+        <p>&copy; 2025 John Doe. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://x.com/yourusername" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 
     <script>
-        // Smooth Scroll
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
         });
 
-        // Scroll Animations with IntersectionObserver - Optimized for mobile
-        const sections = document.querySelectorAll('section');
-        const observerOptions = {
-            threshold: window.innerWidth <= 768 ? 0.05 : 0.1, // Lower threshold on mobile for earlier trigger
-            rootMargin: window.innerWidth <= 768 ? '0px 0px -10% 0px' : '0px 0px -20% 0px' // Adjust margin for smoother entry
-        };
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Trigger skill animations separately for better control
-                    const skills = entry.target.querySelectorAll('.skill');
-                    skills.forEach((skill, index) => {
-                        setTimeout(() => skill.classList.add('visible'), index * 100); // Staggered animation for skills
-                    });
+        // Contact form submission (placeholder - in real app, connect to backend)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent! (This is a placeholder)');
+            this.reset();
+        });
+
+        // Extraordinary animation: Particle effect in header (using canvas)
+        const canvas = document.createElement('canvas');
+
+> Amma:
+canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        document.querySelector('header').appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = document.querySelector('header').offsetHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255,255,255,0.8)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((particle, index) => {
+                particle.update();
+                particle.draw();
+                if (particle.size <= 0.2) {
+                    particles.splice(index, 1);
+                    particles.push(new Particle());
                 }
             });
-        }, observerOptions);
-        sections.forEach(section => observer.observe(section));
-
-        // Reduce motion check for accessibility
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.body.classList.add('reduce-motion');
-            sections.forEach(section => {
-                section.style.transition = 'none';
-                section.style.opacity = '1';
-                section.style.transform = 'none';
-            });
+            requestAnimationFrame(animateParticles);
         }
+        animateParticles();
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = document.querySelector('header').offsetHeight;
+        });
     </script>
 </body>
 </html>
